@@ -3,20 +3,19 @@ USE library_db;
 
 -- Create Student table
 CREATE TABLE IF NOT EXISTS Student (
-    id_no VARCHAR(20) PRIMARY KEY,
+    student_id VARCHAR(20) PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
     username VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,  
-    first_name VARCHAR(50) NOT NULL,
-    middle_name VARCHAR(50),
-    last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL CHECK (email LIKE '%@%'),
     phone VARCHAR(20),
     picture VARCHAR(255) DEFAULT NULL
 );
 
 -- Insert Student
-INSERT INTO Student (id_no, username, password, first_name, middle_name, last_name, email, phone, picture) 
-VALUES ("1","bishnunp", "hashed_password_here", "Bishnu","Prasad","Upadhyay", "bishnu@gmail.com","9746481933","profile_picture.jpg");
+INSERT INTO Student (student_id, username, password, first_name, last_name, email, phone, picture) 
+VALUES ("1","bishnunp", "", "Bishnu","Upadhyay", "bishnu@gmail.com","9746481933","profile_picture.jpg");
 
 -- Create Admin table
 CREATE TABLE IF NOT EXISTS Admin  (

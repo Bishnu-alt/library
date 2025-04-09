@@ -11,7 +11,7 @@
         <div class="hero-section">
             <a href="index.php" class="back-btn">← Back to Home</a>
             <h1>Welcome to Library Management System</h1>
-            <p>Please select your login type to continue</p>
+            <p class="text-center">Please select your login type to continue</p>
         </div>
 
         <div class="login-container">

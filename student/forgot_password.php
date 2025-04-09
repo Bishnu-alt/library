@@ -37,15 +37,5 @@
         </div>
     </div>
 
-    <style>
-    .success-message {
-        background-color: #d4edda;
-        color: #155724;
-        padding: 10px;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-    </style>
 </body>
 </html>

@@ -37,7 +37,5 @@
             <a href="../preLogin.php" class="back-link">← Back to Login Options</a>
         </div>
     </div>
-
-
 </body>
 </html>

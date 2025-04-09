@@ -13,18 +13,31 @@
             <?php
             if (isset($_GET['error'])) {
                 echo '<div class="error-message" style="display: block;">';
-                if ($_GET['error'] === 'empty') {
-                    echo 'Please fill in all fields';
-                } elseif ($_GET['error'] === 'invalid') {
-                    echo 'Invalid student ID or password';
+                switch ($_GET['error']) {
+                    case 'empty':
+                        echo 'Please fill in all fields';
+                        break;
+                    case 'invalid':
+                        echo 'Invalid username or password';
+                        break;
+                    case 'system':
+                        echo 'System error occurred. Please try again later.';
+                        break;
+                    default:
+                        echo 'An error occurred during login';
                 }
+                echo '</div>';
+            }
+            if (isset($_GET['registration']) && $_GET['registration'] === 'success') {
+                echo '<div class="success-message" style="display: block;">';
+                echo 'Registration successful! Please login with your credentials.';
                 echo '</div>';
             }
             ?>
             <form method="post" action="process_login.php">
                 <div class="form-group">
-                    <label for="username">Student ID</label>
-                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username or Email</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Username or Email" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
